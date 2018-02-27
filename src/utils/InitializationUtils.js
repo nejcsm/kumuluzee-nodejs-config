@@ -14,10 +14,10 @@ class InitializationUtils {
     if (serviceName) {
       const serviceVersion = await configurationUtil.get('kumuluzee.version') || '1.0.0';
 
-      return `enviroments/${env}/services/${serviceName}/${serviceVersion}/config`;
+      return `environments/${env}/services/${serviceName}/${serviceVersion}/config`;
     }
 
-    return `enviroments/${env}/config`;
+    return `environments/${env}/config`;
   }
 
   async getStartRetryDelayMs(configurationUtil, implementation: string) {
