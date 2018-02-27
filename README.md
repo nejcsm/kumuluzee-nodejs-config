@@ -11,7 +11,7 @@ KumuluzEE Node.js Config follows the idea of an unified configuration API for th
 ## Install
 
 
-Node version >= 0.8:
+Node version >= 8.0.0:
 
 ```
 $ npm install --save kumuluzee-nodejs-config
