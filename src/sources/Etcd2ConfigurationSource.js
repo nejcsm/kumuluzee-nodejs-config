@@ -33,13 +33,9 @@ class Etcd2ConfigurationSource {
     let cert = await this.configurationUtil.get('kumuluzee.config.etcd.ca') || null;
 
     let sslContext = null;
-
-    // TODO!
     if (cert) {
       cert = cert.replace(/\s+/g, '').replace('-----BEGINCERTIFICATE-----', '').replace('-----ENDCERTIFICATE-----', '');
-      const decode = Buffer.from(cert, 'base64');
-
-      sslContext = decode;
+      sslContext = Buffer.from(cert, 'base64');
     }
 
 
@@ -53,7 +49,6 @@ class Etcd2ConfigurationSource {
         },
       };
       if (sslContext) {
-        // TODO
         etcdSecurityContext.ca = sslContext;
       }
     }
