@@ -52,7 +52,7 @@ class ConfigurationUtilSingleton {
     const configurationSourcesPromises = this.configurationSources.map(configurationSource => configurationSource.get(key));
     const res = await Promise.all(configurationSourcesPromises);
     for (let i = 0; i < res.length; i++) {
-      if (res[i]) return res[i];
+      if (res[i] !== null && res[i] !== undefined) return res[i];
     }
 
     return null;

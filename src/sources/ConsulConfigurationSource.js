@@ -84,7 +84,7 @@ class ConsulConfigurationSource {
     } catch (err) {
       console.error(`Consul exception: ${err}`);
     }
-    return value || null;
+    return value;
   }
 
   watch(key: string) {
@@ -124,6 +124,7 @@ class ConsulConfigurationSource {
           }
         } else {
           console.error(`Watch error: ${err}`);
+          watch();
         }
       } else {
       // Response is succesful

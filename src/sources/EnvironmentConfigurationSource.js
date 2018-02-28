@@ -10,7 +10,7 @@ class EnvironmentConfigurationSource {
     if (!value) {
       value = process.env[this.parseKeyNameForEnvironmentVariablesLegacy(key)];
     }
-    return value || null;
+    return value;
   }
 
   parseKeyNameForEnvironmentVariables(key: string) {

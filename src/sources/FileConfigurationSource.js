@@ -67,7 +67,7 @@ class FileConfigurationSource {
         value = value[splitedKey];
       }
     });
-    return value || null;
+    return value;
   }
 
   getListSize(key: string) {
